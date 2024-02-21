@@ -1,0 +1,36 @@
+﻿<Window x:Class="barberproject.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:barberproject"
+        mc:Ignorable="d"
+          Icon="download1.png"
+     Title="مرحبا بك " HorizontalAlignment="Stretch" VerticalAlignment="Stretch" WindowState="Maximized" Width="778" Height="617" >
+
+
+
+
+    <Grid Background="#3aa9ad">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="محلات ياسر للحلاقة" FontSize="50" Foreground="#3aa9ad" TextAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,-1,0" Background="Black" Height="71" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <StackPanel HorizontalAlignment="Center" Height="488" Margin="10,113,0,0" Width="758" Grid.ColumnSpan="2" VerticalAlignment="Top">
+            <Button Content="عمل فاتورة " FontSize="40" Height="60" Margin="0,0,-0.2,0" Click="Button_Click_1"/>
+            <Button Content="العاملين " Height="60" FontSize="40" Margin="0,0,-0.2,0" Click="Button_Click_2"/>
+            <Button Content="المرتبات" Height="60" FontSize="40" Margin="0,0,-0.2,0" Click="Button_Click_3"/>
+            <Button Content="الفواتير " Height="60" FontSize="40" Click="Button_Click_6" />
+            <Button Content="قائمة الاسعار" Height="60" FontSize="40" Margin="0,0,-0.2,0" Click="Button_Click"/>
+            <Button Content="المخزن" Height="60" FontSize="40" Margin="0,0,0.2,0" Click="Button_Click_4"/>
+            <Button Content="تقفيل حسابات " Height="60" FontSize="40" Margin="0,0,0.2,0" Click="Button_Click_44"/>
+
+            <Button Content="خروج" Height="79" FontSize="40" Margin="0,0,0.2,0" Click="Button_Click_5"/>
+            <Button Content="المرتبات" Height="60" FontSize="40" Click="Button_Click_3"/>
+        </StackPanel>
+
+
+    </Grid>
+</Window>
+

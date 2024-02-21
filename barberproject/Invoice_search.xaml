@@ -1,0 +1,172 @@
+﻿<Window x:Class="barberproject.Invoice_search"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:barberproject"
+        mc:Ignorable="d"
+          Icon="download1.png"
+        Title="قائمة الفواتير " Height="450"  Width="800" WindowState="Maximized">
+    <Grid Background="#3aa9ad" Margin="0,0,-175,-97" ScrollViewer.CanContentScroll="True">
+
+
+        <Button Content="رجوع" HorizontalAlignment="Left"  Width="66" Click="come_back_button" Height="33" VerticalAlignment="Top" Margin="0,60,0,0"/>
+
+        <TextBlock Text="الفواتير" FontSize="40" Foreground="#3aa9ad" TextAlignment="Center" Margin="0,0,-1,0" Background="Black" Height="60" VerticalAlignment="Top"/>
+
+
+        <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Top" Height="123" Width="667" Margin="0,65,0,0">
+            <DockPanel Width="644">
+                <DatePicker Name="invoice_date" Width="331"/>
+                <CheckBox Name="search_date"  Content="بحث بالتاريخ " HorizontalContentAlignment="Center" FontSize="20" Width="297"/>
+
+
+            </DockPanel>
+            <DockPanel Width="670">
+                <StackPanel Width="122"/>
+                <TextBox Name="combo_data" Width="232" Height="28"  />
+                <CheckBox x:Name="search_number" Content="بحث برقم الفاتورة " HorizontalContentAlignment="Center" FontSize="20" Width="292"/>
+
+            </DockPanel>
+
+
+
+
+            <Label HorizontalContentAlignment="Right" FontSize="17" Foreground="White" Width="122">
+            </Label>
+
+            <StackPanel Height="17">
+
+            </StackPanel>
+
+            <Button x:Name="search" Content="بحث" HorizontalAlignment="Stretch" Foreground="#3aa9ad" FontSize=" 20" Height="40" BorderBrush="White" Background="White"  Width="255" Click="search_Click"/>
+
+        </StackPanel>
+
+        <StackPanel Margin="0,193,10,-25" Visibility="Hidden"   x:Name="stack_visibie">
+
+            <Label Content="عرض الفواتير " FontSize="20" Width="127" Height="55" HorizontalAlignment="Center"/>
+
+            <DockPanel Width="692">
+                <ListView x:Name="list_x"   MaxHeight="200" SelectiveScrollingGrid.SelectiveScrollingOrientation="None"  Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" ScrollViewer.CanContentScroll="True"   HorizontalAlignment="Center" Width="auto" d:ItemsSource="{d:SampleData ItemCount=5}" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2"   >
+                    <ListView.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ListView.RenderTransform >
+                    <ListView.View>
+                        <GridView >
+
+                            <GridViewColumn  Width="50" Header=" السعر " DisplayMemberBinding="{Binding price}"  TextBlock.TextAlignment="Left" x:Name="mm" />
+                            <GridViewColumn Width="150"  Header="الوصف"  TextBlock.TextAlignment="Right" x:Name="descri"    >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock TextWrapping="Wrap" Text="{Binding descriptio}"/>
+                                        </StackPanel>
+
+                                    </DataTemplate>
+
+                                </GridViewColumn.CellTemplate>
+
+
+                            </GridViewColumn>
+                            <GridViewColumn x:Name="iddd" Width="auto" Header=" الرقم" TextBlock.TextAlignment="Right" DisplayMemberBinding="{Binding id}"   />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <StackPanel Width="73">
+
+                </StackPanel>
+                <StackPanel Width="321" >
+                    <DockPanel>
+                        <StackPanel Width="159">
+                            <TextBox x:Name="invoice_id" Height="35"/>
+                            <TextBox x:Name="date_text" Height="35"/>
+                            <TextBox x:Name="wname_text" Height="35"/>
+                            <TextBox x:Name="amount_text" Height="35"/>
+                            <TextBox x:Name="discount_text" Height="35"/>
+                            <TextBox x:Name="total_text" Height="35"/>
+                        </StackPanel>
+                        <StackPanel Width="199" >
+                            <Label Content=" رقم الفاتورة  " FontStyle="Italic" FontSize="20 " VerticalContentAlignment="Top"  HorizontalContentAlignment="Right" Width="137" Height="38"/>
+
+                            <Label Content="التاريخ والوقت " FontStyle="Italic" FontSize="20 " VerticalContentAlignment="Top"  HorizontalContentAlignment="Right" Width="137" Height="38"/>
+                            <Label Content="اسم العامل " FontStyle="Italic" FontSize="20 " VerticalContentAlignment="Top" HorizontalContentAlignment="Right" Width="137" Height="35"/>
+                            <Label Content="المبلغ الكلي " FontStyle="Italic" FontSize="20 " VerticalContentAlignment="Top" HorizontalContentAlignment="Right" Width="137" Height="35"/>
+                            <Label Content="الخصم " FontStyle="Italic" FontSize="20 " VerticalContentAlignment="Top" HorizontalContentAlignment="Right" Width="137" Height="35"/>
+                            <Label Content="ألاجمالي   " FontStyle="Italic" FontSize="20 " VerticalContentAlignment="Top" HorizontalContentAlignment="Right" Width="153" Height="35"/>
+
+
+
+                        </StackPanel>
+                    </DockPanel>
+
+                </StackPanel>
+            </DockPanel>
+
+
+
+            <!--<DataGrid x:Name="datagrid_invoice" ScrollViewer.CanContentScroll="True" MaxHeight="250"  HorizontalAlignment="Center" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Height="156" Width="786" >
+
+
+
+                <DataGrid.Columns>
+
+                    <DataGridTemplateColumn >
+
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="btn_delete"  Content="مسح عامل  "  AutomationProperties.IsRowHeader="False" MouseDoubleClick="btn_delete_MouseDoubleClick"/>
+
+                            </DataTemplate>
+
+                        </DataGridTemplateColumn.CellTemplate>
+
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>-->
+            <Button x:Name="delete_invoice" Content="مسح الفاتورة " FontSize="17" FontStyle="Italic" Height="40" Width="160" Click="Button_Click"></Button>
+
+        </StackPanel>
+        <StackPanel Margin="0,193,10,-25" Visibility="Hidden"   x:Name="stack_visibie1">
+            <DockPanel Height="44">
+                <StackPanel Width="150"/>
+                <TextBox x:Name="total_invoice" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Width="91"/>
+                <Label Content="الاجمالي" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" FontStyle="Italic" Width="94"/>
+                <Label Content="عرض الفواتير " FontSize="20" Width="127" Height="55" HorizontalAlignment="Center"/>
+            </DockPanel>
+           
+            
+            <ListView x:Name="list_x_fordate"   MaxHeight="300" SelectiveScrollingGrid.SelectiveScrollingOrientation="None"  Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" ScrollViewer.CanContentScroll="True"   HorizontalAlignment="Center" Width="949" d:ItemsSource="{d:SampleData ItemCount=8}" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" Height="212"   >
+                <ListView.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ListView.RenderTransform >
+                <ListView.View>
+                    <GridView >
+
+                        <GridViewColumn  Width="70" Header=" رقم الفاتورة  " DisplayMemberBinding="{Binding Invoice_id}"  TextBlock.TextAlignment="Left" x:Name="listid" />
+                        <GridViewColumn  Width="70" Header=" اسم العامل   " DisplayMemberBinding="{Binding Worker_name}"  TextBlock.TextAlignment="Left" x:Name="listworkerid" />
+                        <GridViewColumn  Width="70" Header=" المبلغ الكلي   " DisplayMemberBinding="{Binding Amount}"  TextBlock.TextAlignment="Left" x:Name="listamount" />
+                        <GridViewColumn  Width="70" Header=" الخصم   " DisplayMemberBinding="{Binding Discount}"  TextBlock.TextAlignment="Left" x:Name="listdiscount" />
+                        <GridViewColumn  Width="140" Header="التاريخ والوقت  " DisplayMemberBinding="{Binding  Created_at}"  TextBlock.TextAlignment="Left" x:Name="listcreatat" />
+
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+
+        </StackPanel>
+
+
+
+    </Grid>
+</Window>

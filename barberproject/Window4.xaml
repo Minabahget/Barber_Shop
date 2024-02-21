@@ -1,0 +1,79 @@
+﻿<Window x:Class="barberproject.Window4"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:barberproject"
+        mc:Ignorable="d"
+          Icon="download1.png"
+        Title="Window4" Height="472" Width="327" Initialized="Window_Initialized" >
+    <Grid Margin="0,0,0,19">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="49*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="2" Margin="0,0,10,-427" Grid.RowSpan="2" Width="auto" Height="auto" >
+            <DockPanel Height="23" Width="219">
+                <TextBox  x:Name="worker_name" FontStyle="Italic" TextWrapping="Wrap" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="96" />
+                <TextBox  x:Name="date_time" FontStyle="Italic" TextWrapping="Wrap" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="123" Height="23" />
+
+            </DockPanel>
+            <DockPanel Height="28" RenderTransformOrigin="0.5,0.5" Width="147">
+               
+                <TextBox x:Name="invoice_number" Width="60" BorderBrush="White" AutoWordSelection="False"  HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                <Label Content=": رقم الفاتورة" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="14"/>
+
+            </DockPanel>
+
+            <Image Source="C:\Users\pc\source\repos\barberproject\barberproject\download1.png" Height="51"  Grid.Column="1" Width="63"/>
+
+            <Label Content="Yasser Hairdressing" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" FontSize="20" FontStyle="Italic" HorizontalAlignment="Left"  Height="40" Width="314" Grid.Column="1"/>
+            <Label Content="01006990352 " VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" FontStyle="Italic" HorizontalAlignment="Left" Height="32" Width="322" Grid.Column="1"/>
+            <Label Content="01155366443 " VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" FontStyle="Italic" HorizontalAlignment="Left" Height="33" Width="317" Grid.Column="1" RenderTransformOrigin="0.474,0.561"/>
+            <ListView x:Name="list_x"    Height="auto" SelectiveScrollingGrid.SelectiveScrollingOrientation="None"  Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" ScrollViewer.CanContentScroll="False"   HorizontalAlignment="Center" Width="auto" d:ItemsSource="{d:SampleData ItemCount=5}" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2"   >
+                <ListView.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ListView.RenderTransform >
+                <ListView.View>
+                    <GridView >
+
+                        <GridViewColumn  Width="50" Header=" السعر " DisplayMemberBinding="{Binding price}"  TextBlock.TextAlignment="Left" x:Name="mm" />
+                        <GridViewColumn Width="150"  Header="الوصف"  TextBlock.TextAlignment="Right" x:Name="descri"    >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock TextWrapping="Wrap" Text="{Binding descriptio}"/>
+                                    </StackPanel>
+
+                                </DataTemplate>
+
+                            </GridViewColumn.CellTemplate>
+
+
+                        </GridViewColumn>
+                        <GridViewColumn x:Name="iddd" Width="auto" Header=" الرقم" TextBlock.TextAlignment="Right" DisplayMemberBinding="{Binding id}"   />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <DockPanel Width="167">
+                <TextBox  x:Name="total_price" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextWrapping="Wrap"  Width="46" Grid.Column="1"/>
+
+                <Label Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Content="المبلغ الكلي بعد الخصم" Width="125"/>
+
+            </DockPanel>
+
+
+
+        </StackPanel>
+
+    </Grid>
+</Window>

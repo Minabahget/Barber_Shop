@@ -1,0 +1,47 @@
+﻿
+
+Attempting to gather dependency information for package 'Scar.Common.WPF.Controls.TimePicker.1.0.6812.22525' with respect to project 'barberproject', targeting '.NETFramework,Version=v4.7.2'
+Gathering dependency information took 3.18 sec
+Attempting to resolve dependencies for package 'Scar.Common.WPF.Controls.TimePicker.1.0.6812.22525' with DependencyBehavior 'Lowest'
+Resolving dependency information took 0 ms
+Resolving actions to install package 'Scar.Common.WPF.Controls.TimePicker.1.0.6812.22525'
+Resolved actions to install package 'Scar.Common.WPF.Controls.TimePicker.1.0.6812.22525'
+  GET https://api.nuget.org/v3-flatcontainer/jetbrains.annotations/2018.2.1/jetbrains.annotations.2018.2.1.nupkg
+  GET https://api.nuget.org/v3-flatcontainer/scar.common.wpf.controls.behaviors/1.0.6731.30683/scar.common.wpf.controls.behaviors.1.0.6731.30683.nupkg
+  GET https://api.nuget.org/v3-flatcontainer/scar.common.wpf.controls.numericupdown/1.0.6811.31762/scar.common.wpf.controls.numericupdown.1.0.6811.31762.nupkg
+  GET https://api.nuget.org/v3-flatcontainer/system.windows.interactivity.wpf/2.0.20525/system.windows.interactivity.wpf.2.0.20525.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/scar.common.wpf.controls.numericupdown/1.0.6811.31762/scar.common.wpf.controls.numericupdown.1.0.6811.31762.nupkg 207ms
+  OK https://api.nuget.org/v3-flatcontainer/jetbrains.annotations/2018.2.1/jetbrains.annotations.2018.2.1.nupkg 273ms
+  OK https://api.nuget.org/v3-flatcontainer/scar.common.wpf.controls.behaviors/1.0.6731.30683/scar.common.wpf.controls.behaviors.1.0.6731.30683.nupkg 530ms
+  OK https://api.nuget.org/v3-flatcontainer/system.windows.interactivity.wpf/2.0.20525/system.windows.interactivity.wpf.2.0.20525.nupkg 638ms
+Installed Scar.Common.WPF.Controls.NumericUpDown 1.0.6811.31762 from https://api.nuget.org/v3/index.json with content hash pj73lBznYmhhq9YviyHyv8eHc1jPVM7z6ELVn5d/I+ggpqaaAdlsSr0VKSPr9pJ0uF+YZV3sZlAW+EWSgKyiWw==.
+  GET https://api.nuget.org/v3-flatcontainer/scar.common.wpf.controls.timepicker/1.0.6812.22525/scar.common.wpf.controls.timepicker.1.0.6812.22525.nupkg
+Installed Scar.Common.WPF.Controls.Behaviors 1.0.6731.30683 from https://api.nuget.org/v3/index.json with content hash Rqg5VLvdvJd3XwGyyKK+tjSMxvjv2cAkD/nHtTi86/9Sa73TKmwNIJE/3drvwo9dI/wnY6Ys2fRW7s7uRKPT4g==.
+Installed System.Windows.Interactivity.WPF 2.0.20525 from https://api.nuget.org/v3/index.json with content hash 0r+Le4E7hCm4zToUvBzjSUyTcuU3rFeoPa7JyTdWIzR/F7wH6+O/pWkjHIG40hIA0z1wvRdZayvoizA4wcK1dg==.
+Installed JetBrains.Annotations 2018.2.1 from https://api.nuget.org/v3/index.json with content hash /aPVHEW93EV1Httnbniz0Cty5+jrXobS27I8QBnIUMe0n51qgxLyQV2AQNko4yXkeOxEdWiZ7bg9+BuMxYbXcA==.
+  OK https://api.nuget.org/v3-flatcontainer/scar.common.wpf.controls.timepicker/1.0.6812.22525/scar.common.wpf.controls.timepicker.1.0.6812.22525.nupkg 217ms
+Adding package 'JetBrains.Annotations.2018.2.1' to folder 'C:\Users\pc\source\repos\barberproject\packages'
+Installed Scar.Common.WPF.Controls.TimePicker 1.0.6812.22525 from https://api.nuget.org/v3/index.json with content hash 6fD3aQ+HjsYG3xuPhpfWwD5My2FRPs6YcAJlOhwfS7ECzyWa6pVwm0p4sUgxXpKxwpgxwaPnniSXZCUlvkSpOw==.
+Added package 'JetBrains.Annotations.2018.2.1' to folder 'C:\Users\pc\source\repos\barberproject\packages'
+Added package 'JetBrains.Annotations.2018.2.1' to 'packages.config'
+Successfully installed 'JetBrains.Annotations 2018.2.1' to barberproject
+Adding package 'System.Windows.Interactivity.WPF.2.0.20525' to folder 'C:\Users\pc\source\repos\barberproject\packages'
+Added package 'System.Windows.Interactivity.WPF.2.0.20525' to folder 'C:\Users\pc\source\repos\barberproject\packages'
+Added package 'System.Windows.Interactivity.WPF.2.0.20525' to 'packages.config'
+Successfully installed 'System.Windows.Interactivity.WPF 2.0.20525' to barberproject
+Adding package 'Scar.Common.WPF.Controls.Behaviors.1.0.6731.30683' to folder 'C:\Users\pc\source\repos\barberproject\packages'
+Added package 'Scar.Common.WPF.Controls.Behaviors.1.0.6731.30683' to folder 'C:\Users\pc\source\repos\barberproject\packages'
+Added package 'Scar.Common.WPF.Controls.Behaviors.1.0.6731.30683' to 'packages.config'
+Successfully installed 'Scar.Common.WPF.Controls.Behaviors 1.0.6731.30683' to barberproject
+Adding package 'Scar.Common.WPF.Controls.NumericUpDown.1.0.6811.31762' to folder 'C:\Users\pc\source\repos\barberproject\packages'
+Added package 'Scar.Common.WPF.Controls.NumericUpDown.1.0.6811.31762' to folder 'C:\Users\pc\source\repos\barberproject\packages'
+Added package 'Scar.Common.WPF.Controls.NumericUpDown.1.0.6811.31762' to 'packages.config'
+Successfully installed 'Scar.Common.WPF.Controls.NumericUpDown 1.0.6811.31762' to barberproject
+Adding package 'Scar.Common.WPF.Controls.TimePicker.1.0.6812.22525' to folder 'C:\Users\pc\source\repos\barberproject\packages'
+Added package 'Scar.Common.WPF.Controls.TimePicker.1.0.6812.22525' to folder 'C:\Users\pc\source\repos\barberproject\packages'
+Added package 'Scar.Common.WPF.Controls.TimePicker.1.0.6812.22525' to 'packages.config'
+Successfully installed 'Scar.Common.WPF.Controls.TimePicker 1.0.6812.22525' to barberproject
+Executing nuget actions took 6.83 sec
+Time Elapsed: 00:00:11.1764843
+========== Finished ==========
+

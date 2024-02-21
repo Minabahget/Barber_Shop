@@ -1,0 +1,99 @@
+﻿<Window x:Class="barberproject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:barberproject"
+        mc:Ignorable="d"
+       Icon="download1.png"
+        
+        Title="ياسر للحلاقة "  MinHeight="350" MinWidth="350" WindowState="Maximized" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Foreground="White"   MouseDoubleClick="Window_MouseDoubleClick"  >
+
+    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="247*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="502*"/>
+        </Grid.ColumnDefinitions>
+        <Border CornerRadius="10 0 0 10" Margin="0,0,1.2,0.6" Grid.ColumnSpan="2">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#3aa9ad" Offset="0"/>
+                    <GradientStop Color="#3aa9ad" Offset="0"/>
+                </LinearGradientBrush>
+
+
+            </Border.Background>
+
+            <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Canvas>
+                    <Polygon Points="0,20 230,140 0,270" Fill="#4eb1b6"/>
+                    <Polygon Points="100,400 200,370 180,470" Fill="#4eb1b6" HorizontalAlignment="Center" Height="381" VerticalAlignment="Top"/>
+                    <Ellipse Width="40 " Height="40" Fill="#4eb1b6" Canvas.Left="30" Canvas.Top="355"/>
+                    <Ellipse Margin="50 400 0 0" Width="40 " Height="0" Fill="#4eb1b6"/>
+
+                </Canvas>
+
+
+
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text=" محلات ياسر للحلاقة " Foreground="White" TextAlignment="Center" FontSize="36" TextWrapping="Wrap"/>
+                    <TextBlock Text="هل نسيت كلمة السر ؟  " Style="{StaticResource normaltext}" Opacity="0.8" Margin="20 30"/>
+                    <Button Content=" تسجيل" Style="{StaticResource button}" Click="Button_Click"/>
+
+                </StackPanel>
+
+            </Grid>
+
+        </Border>
+
+
+        <Border  Background="#ffffff" CornerRadius="0 10 10 0 " Margin="24.8,-2,-4.4,2.6" RenderTransformOrigin="0.5,0.5" Grid.Column="2" Grid.ColumnSpan="2">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.009"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+            <StackPanel>
+                <TextBlock Text="مرحبا بك "  Foreground="#3ab19b" TextAlignment="Center" Height="100" FontSize="37" TextWrapping="Wrap"/>
+
+
+                <Border BorderThickness="1" BorderBrush="#acb0af" Margin="70 20 " CornerRadius="5" Height="44">
+                    <Grid Margin="7 9" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="90*"/>
+                            <ColumnDefinition Width="0*"/>
+                            <ColumnDefinition Width="227*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="images.png" Height="20" OpacityMask="#FF2245D7"/>
+                        <TextBlock x:Name="textuserr" Text="                                    اسم المستخدم"   Style="{StaticResource texthint}" Margin="0" Height="18" VerticalAlignment="Top" Grid.ColumnSpan="3" HorizontalAlignment="Right" Width="290" RenderTransformOrigin="0.546,0.57" MouseUp="usermousedown" TextAlignment="Justify" TextOptions.TextFormattingMode="Display" FontSize="16" FontWeight="Bold"/>
+                        <TextBox x:Name="txtuserr" FontSize="14" Grid.Column="1" Margin="10,0,10,-0.6" Foreground="#878787" BorderBrush="Transparent" BorderThickness="2" TextChanged="userchanged" Grid.ColumnSpan="3" TextAlignment="Right"   />
+                    </Grid>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="#acb0af" Margin="70 50 " CornerRadius="5" Height="44">
+                    <Grid Margin="7 9" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="90*"/>
+                            <ColumnDefinition Width="0*"/>
+                            <ColumnDefinition Width="227*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="download.png" Height="20"/>
+                        <TextBlock x:Name="textpass" Text="                                                      كلمة المرور  "  Style="{StaticResource texthint}" Margin="0" Height="18" VerticalAlignment="Top" Grid.ColumnSpan="3" HorizontalAlignment="Right" Width="290" RenderTransformOrigin="0.546,0.57" MouseUp="passmouse" />
+                        <PasswordBox x:Name="txtpass" FontSize="14"  Grid.Column="1" Margin="10,0,10,-0.6" Foreground="#878787" BorderBrush="Transparent" BorderThickness="2" PasswordChanged="passchanged" Grid.ColumnSpan="3" FontWeight="Bold"   />
+                    </Grid>
+                </Border>
+                <Button Content="دخول " Style="{StaticResource mbutton}" Margin="1" Click="clicksignin"/>
+            </StackPanel>
+
+        </Border>
+    </Grid>
+</Window>
+
+

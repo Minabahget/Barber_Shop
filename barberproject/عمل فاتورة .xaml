@@ -1,0 +1,112 @@
+﻿<Window x:Class="barberproject.make_invoice"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:barberproject"
+        mc:Ignorable="d"
+          Icon="download1.png"
+        Title="عمل_فاتورة"  FontSize="16" Background="#3aa9ad"  Width="800" Height="679" WindowState="Maximized" VerticalAlignment="Center" HorizontalAlignment="Center">
+    <Grid Background="#3aa9ad"  VerticalAlignment="top" HorizontalAlignment="Stretch"    Height="669"  >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="21*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="0,0,0,10" Grid.ColumnSpan="2">
+            <TextBlock Text=" عمل فاتورة " FontSize="50" Foreground="#3aa9ad" TextAlignment="Center"  Margin="0,0,0,406.2" Background="Black" VerticalAlignment="Stretch" Grid.ColumnSpan="2"/>
+        </StackPanel>
+        <StackPanel Margin="0,240,10,173" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2">
+            <DockPanel x:Name="dpanel" VerticalAlignment="Center" HorizontalAlignment="Center"   >
+
+
+                <ListView x:Name="list" MaxHeight="250" Width="326" Margin="0,0,0,-0.2" VerticalContentAlignment="Top" VerticalAlignment="Stretch"  ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Hidden"    ScrollViewer.CanContentScroll="True" >
+                   
+                    <ListView.View>
+                        
+                        <GridView>
+
+                            <GridViewColumn Width="50" Header=" السعر " DisplayMemberBinding ="{Binding price}" TextBlock.TextAlignment="Right" x:Name="mm" />
+
+                            <GridViewColumn Width="200" Header="                                الوصف " TextBlock.TextAlignment="Right"   >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                            <TextBlock TextWrapping="Wrap" Text="{Binding describtion}"/>
+                                    </StackPanel>
+
+                                </DataTemplate>
+
+                            </GridViewColumn.CellTemplate>
+
+
+                            </GridViewColumn>
+                            <GridViewColumn x:Name="iddd" Width="40" Header=" الرقم" TextBlock.TextAlignment="Right"    DisplayMemberBinding="{Binding id}"/>
+                        </GridView>
+                    </ListView.View>
+                    
+                </ListView>
+
+                <StackPanel  Margin="0,53,0,-0.2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <Label Content=" المبلغ الكلي   " FontSize="20"  Height="43" Margin="0,0,-0.4,0"/>
+                    <TextBox x:Name="amount" Height="40" TextWrapping="Wrap" IsReadOnly="True" TextAlignment="Center" Margin="0,0,-0.4,0"/>
+                    <Label Content="       خصم    " FontSize="20"  Height="43" Margin="0,0,-0.4,0"/>
+                    <TextBox x:Name="discount1" Height="40" TextWrapping="Wrap"  TextAlignment="Center" Margin="0,0,-0.4,0"/>
+
+
+                </StackPanel>
+                <StackPanel VerticalAlignment="Stretch"  HorizontalAlignment="Stretch" Width="auto " Height="auto ">
+                    <DataGrid  x:Name="datagrid"  TextBlock.BaselineOffset="2" MinWidth="250"  ScrollViewer.CanContentScroll="True" MaxHeight="250"  CanUserAddRows="False" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" FontWeight="SemiBold" FontStyle="Oblique" Background="White" Width="auto " MaxWidth="650" Height="243"  Initialized="DataGrid_Initialized" BorderBrush="White" HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+                        <DataGrid.Columns>
+
+                            <DataGridTemplateColumn  >
+
+                                <DataGridTemplateColumn.CellTemplate >
+
+                                    <DataTemplate>
+                                        <Button Content=" اختر " Name="btn" MouseDoubleClick="Button_Click" AutomationProperties.IsRowHeader="True" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <!--<DataGridTextColumn Header="رقم" />-->
+                            <!--<DataGridTextColumn Header="رقم" />
+                    <DataGridTextColumn Header="رقم" />-->
+
+
+
+                        </DataGrid.Columns>
+
+
+
+                    </DataGrid>
+                </StackPanel>
+            </DockPanel>
+        </StackPanel>
+
+        <DockPanel Margin="0,106,23.956,500" VerticalAlignment="Stretch" HorizontalAlignment="Right">
+            <StackPanel Width="288">
+                <Button Content="استخراج الفاتورة " Height="40" VerticalAlignment="Top" Width="147" Click="Button_Click_1" />
+                <!--<Button Content="رجوع الي القائمة الرئيسية " Height="40" VerticalAlignment="Top" Width="147" Click="Button_Click1"/>-->
+            </StackPanel>
+            <StackPanel Margin="0,0,0,10" Width="234">
+                <!--<TextBox x:Name="worker" Height="39" TextWrapping="Wrap"  VerticalAlignment="Top" Width="435" TextAlignment="Right"/>-->
+                <ComboBox  Name="idcombo" Width="220" Height="40"  >
+
+
+                </ComboBox>
+
+                <!--<TextBox Height="33" Name="discount" TextWrapping="Wrap"  VerticalAlignment="Top" Width="435" TextAlignment="Right"/>-->
+            </StackPanel>
+            <StackPanel>
+                <Label Content="رقم العامل " HorizontalAlignment="Stretch" FontSize="20" Width="118" Height="36" VerticalAlignment="Top"/>
+                <!--<Label Content="     خصم " HorizontalAlignment="Stretch"  FontSize="20" Width="118" Height="47" VerticalAlignment="Top"/>-->
+            </StackPanel>
+        </DockPanel>
+        <Button Content="رجوع" HorizontalAlignment="Left" Margin="13,0,0,633" Width="66" Click="come_back_button" Height="30" VerticalAlignment="Bottom"/>
+
+
+
+
+
+    </Grid>
+</Window>

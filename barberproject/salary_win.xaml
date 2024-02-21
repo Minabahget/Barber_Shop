@@ -1,0 +1,74 @@
+﻿<Window x:Class="barberproject.salary_win"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:barberproject"
+        mc:Ignorable="d"
+          Icon="download1.png"
+        Title="المرتبات" Height="450" Width="800" WindowState="Maximized" FontSize="16">
+    <Grid Background="#3aa9ad">
+        <StackPanel>
+            <TextBlock Text="المرتبات" FontSize="40" Foreground="#3aa9ad" TextAlignment="Center" Margin="0,0,-1,0" Background="Black" Height="60" VerticalAlignment="Top"/>
+
+
+            <DockPanel HorizontalAlignment="Right" Height="38"  VerticalAlignment="Top" Width="563">
+                <ComboBox x:Name="combosalary" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Width="142"  Height="28" Margin="0,5,0,5.4" SelectionChanged="combosalary_SelectionChanged_1" >
+                    <ComboBoxItem Name="m1" Content="يومي "/>
+                    <ComboBoxItem Name="m2" Content="اسبوعي "/>
+
+
+
+                </ComboBox>
+                <Label Content="    المرتب بال " VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="121" Margin="0,0,0,10.4" Height="34"/>
+                <ComboBox Name="combosearch" HorizontalAlignment="Stretch" Width="160" Margin="0,0,0,5.4" Height="28" VerticalAlignment="Bottom" SelectionChanged="combosearch_SelectionChanged"/>
+                <Label Content="بحث بالاسم   "  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="121" Margin="0,0,0,10.4"/>
+
+
+            </DockPanel>
+            <DockPanel x:Name="date_dock" Width="256"  Visibility="Hidden" >
+                <DatePicker Name="date_text" Width="177" SelectedDateChanged="date_text_SelectedDateChanged"/>
+                <Label Width="87" Content=" التاريخ" />
+            </DockPanel>
+            <DockPanel x:Name="date_dock1" Width="256"  Visibility="Hidden" >
+                <DatePicker Name="date_text1" Width="177" SelectedDateChanged="date_text1_SelectedDateChanged"/>
+                <Label Width="87" Content=" التاريخ" />
+            </DockPanel>
+
+            <DockPanel HorizontalAlignment="Center" Height="47" Width="411" >
+                <DockPanel x:Name="dock_total" Visibility="Hidden">
+                    <TextBox x:Name="total_t" Width="65" IsReadOnlyCaretVisible="True"  />
+                    <Label Content="الاجمالي "  x:Name="total_l" Height="30" Width="86"/>
+                </DockPanel>
+                
+                <Button Content="تم القبض" Name="paid_btn" Visibility="Hidden" Height="36" Width="123"  Click="paid_btn_Click"/>
+                <Button  Content="حساب المرتب " Visibility="Hidden"  Width="123" Name="cal" Click="calculate" Height="36"/>
+
+            </DockPanel>
+            <StackPanel x:Name="list_stack"  Visibility="Hidden">
+                <ListView x:Name="list" MaxHeight="300" Width="824" VerticalContentAlignment="Top"  ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"    ScrollViewer.CanContentScroll="True" Height="auto" >
+
+                    <ListView.View>
+
+                        <GridView>
+
+                            <GridViewColumn Width="auto" Header="الرقم" DisplayMemberBinding ="{Binding id}" TextBlock.TextAlignment="Right" />
+                            <GridViewColumn Width="auto" Header="الاسم" DisplayMemberBinding ="{Binding name}" TextBlock.TextAlignment="Right" />
+                            <GridViewColumn Width="auto" Header="وقت الدخول" DisplayMemberBinding ="{Binding in_time}" TextBlock.TextAlignment="Right"  />
+                            <GridViewColumn Width="auto" Header="وقت الخروج" DisplayMemberBinding ="{Binding out_time}" TextBlock.TextAlignment="Right"  />
+                            <GridViewColumn Width="auto" Header="خصم الدخول " DisplayMemberBinding ="{Binding deduction_in}" TextBlock.TextAlignment="Right"  />
+                            <GridViewColumn Width="auto" Header="خصم الخروج " DisplayMemberBinding ="{Binding deduction_out}" TextBlock.TextAlignment="Right" />
+                            <GridViewColumn Width="auto" Header="التاريخ" DisplayMemberBinding ="{Binding date}" TextBlock.TextAlignment="Right" x:Name="mm" />
+                            <GridViewColumn Width="auto" Header="الاضافي" DisplayMemberBinding ="{Binding bonus}" TextBlock.TextAlignment="Right" />
+                            <GridViewColumn Width="auto" Header="المرتب الكلي" DisplayMemberBinding ="{Binding total_amount}" TextBlock.TextAlignment="Right"  />
+                            <GridViewColumn  Width="auto" Header="حالة القبض" TextBlock.TextAlignment="Right"    DisplayMemberBinding="{Binding paid}"/>
+                        </GridView>
+                    </ListView.View>
+
+                </ListView>
+
+            </StackPanel>
+        </StackPanel>
+        <Button Content="رجوع" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+    </Grid>
+</Window>
